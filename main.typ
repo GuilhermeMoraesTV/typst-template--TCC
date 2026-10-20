@@ -3,7 +3,7 @@
 // Este arquivo só guarda (1) os dados do trabalho e (2) a ordem das partes do documento.
 // O texto fica em arquivos separados:
 //   pre-textuais/   resumo, abstract, dedicatória, agradecimentos, epígrafe, errata
-//   capitulos/      um arquivo por capítulo (01-introducao.typ ... 06-consideracoes-finais.typ)
+//   capitulos/      um arquivo por capítulo (01-introducao.typ ... 07-consideracoes-finais.typ)
 //   pos-textuais/   apêndices (material do aluno) e anexos (material de terceiros)
 //   assets/         figuras, diagramas, gráficos, códigos e algoritmos citados no texto
 //   data/           dados em CSV usados em tabelas
@@ -61,10 +61,11 @@
 // Comente um include para compilar sem o capítulo (ex.: capítulos ainda não escritos).
 #include "capitulos/01-introducao.typ"
 #include "capitulos/02-referencial-teorico.typ"
-#include "capitulos/03-metodologia.typ"
-#include "capitulos/04-desenvolvimento.typ"
-#include "capitulos/05-resultados.typ"
-#include "capitulos/06-consideracoes-finais.typ"
+#include "capitulos/03-trabalhos-correlatos.typ"
+#include "capitulos/04-metodologia.typ"
+#include "capitulos/05-desenvolvimento.typ"
+#include "capitulos/06-resultados.typ"
+#include "capitulos/07-consideracoes-finais.typ"
 
 // ── Pós-textuais (ordem NBR 14724) ────────────────────────────────────────────
 #references()  // só lista obras citadas no texto

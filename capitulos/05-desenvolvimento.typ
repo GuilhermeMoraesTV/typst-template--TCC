@@ -1,17 +1,17 @@
-// capitulos/04-desenvolvimento.typ — Capítulo 4: Desenvolvimento do software.
+// capitulos/05-desenvolvimento.typ — Capítulo 5: Desenvolvimento do software.
 // Recursos do template demonstrados aqui: #quadro de requisitos, diagrama cetz importado de
 // assets/, imagem SVG gerada pelo PlantUML, diagrama de classes gerado do código-fonte
 // (sourcecraft), #codigo com arquivo externo e nome de arquivo, #algoritmo e código inline.
 // Pode ser aberto sozinho no preview: o #show: capitulo.with(...) aplica o estilo e a numeração.
 // Rótulos de outros capítulos aparecem como ‹rótulo› em vermelho; no main.typ, saem certos.
 #import "../ifbasaj-tcc/imports.typ": *
-#show: capitulo.with(numero: 4)
+#show: capitulo.with(numero: 5)
 #import "../assets/diagramas/arquitetura.typ": arquitetura
 #import "@preview/sourcecraft:0.1.0": source-diagram
 
 = Desenvolvimento do software <cap-desenvolvimento>
 
-#orientacao(regras: "DES-01 a DES-03 e DES-07")[
+#orientacao[
   Descreva o que foi feito, com decisões técnicas justificadas. Listagens longas de
   código vão para o Apêndice. Toda figura DEVE ter fonte e ser citada no texto.
   O que o texto afirma que foi implementado DEVE existir no repositório.
@@ -19,7 +19,7 @@
 
 == Requisitos <sec-requisitos>
 
-#orientacao(regras: "DES-04")[Liste os requisitos funcionais e não funcionais que saíram do levantamento da @sec-levantamento.]
+#orientacao[Liste os requisitos funcionais e não funcionais que saíram do levantamento da @sec-levantamento.]
 
 O @qua-requisitos apresenta os requisitos funcionais (RF) e não funcionais (RNF) do sistema.
 
@@ -37,7 +37,7 @@ O @qua-requisitos apresenta os requisitos funcionais (RF) e não funcionais (RNF
 
 == Arquitetura <sec-arquitetura>
 
-#orientacao(regras: "DES-05")[Apresente a arquitetura com diagrama e explique cada parte.]
+#orientacao[Apresente a arquitetura com diagrama e explique cada parte.]
 
 A @fig-arquitetura mostra a arquitetura do sistema. O diagrama foi desenhado em cetz, no arquivo `assets/diagramas/arquitetura.typ`, e importado neste capítulo.
 
@@ -47,7 +47,7 @@ A @fig-arquitetura mostra a arquitetura do sistema. O diagrama foi desenhado em 
 
 == Modelagem <sec-modelagem>
 
-#orientacao(regras: "DES-06")[Traga a modelagem (casos de uso, classes, dados) coerente com os requisitos.]
+#orientacao[Traga a modelagem (casos de uso, classes, dados) coerente com os requisitos.]
 
 Diagramas feitos em ferramentas externas entram como imagem. A @fig-uml foi gerada pelo PlantUML a partir de `assets/diagramas/diagramauml.puml` (exporte em SVG para manter a nitidez).
 
@@ -72,7 +72,7 @@ O diagrama de classes da @fig-classes é gerado diretamente do código-fonte com
 
 == Implementação <sec-implementacao>
 
-#orientacao(regras: "DES-02 e DES-07")[
+#orientacao[
   Mostre só os trechos que sustentam uma decisão técnica e comente-os. Nomes de arquivos,
   classes e comandos no meio do texto vão como código inline, entre crases: `server.js`.
 ]
@@ -95,6 +95,6 @@ A busca de produtos segue o @alg-busca. Algoritmos em pseudocódigo ficam em arq
 
 == Testes <sec-testes>
 
-#orientacao(regras: "DES-08")[Descreva os testes realizados e o que cobrem: unidade, integração, aceitação.]
+#orientacao[Descreva os testes realizados e o que cobrem: unidade, integração, aceitação.]
 
 #lorem(60)

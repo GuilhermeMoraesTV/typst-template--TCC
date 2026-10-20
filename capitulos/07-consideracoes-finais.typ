@@ -1,12 +1,12 @@
-// capitulos/06-consideracoes-finais.typ — Capítulo 6: Considerações finais.
+// capitulos/07-consideracoes-finais.typ — Capítulo 7: Considerações finais.
 // Pode ser aberto sozinho no preview: o #show: capitulo.with(...) aplica o estilo e a numeração.
 // Rótulos de outros capítulos aparecem como ‹rótulo› em vermelho; no main.typ, saem certos.
 #import "../ifbasaj-tcc/imports.typ": *
-#show: capitulo.with(numero: 6)
+#show: capitulo.with(numero: 7)
 
 = Considerações finais <cap-consideracoes>
 
-#orientacao(regras: "CON-01 a CON-04")[
+#orientacao[
   DEVE retomar o objetivo geral e cada objetivo específico, na mesma ordem da
   @sec-objetivos-especificos, dizendo se foi atingido; confrontar a hipótese da
   @sec-hipotese com os resultados do @cap-resultados; trazer limitações e trabalhos

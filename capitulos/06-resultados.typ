@@ -1,19 +1,19 @@
-// capitulos/05-resultados.typ — Capítulo 5: Resultados e avaliação.
+// capitulos/06-resultados.typ — Capítulo 6: Resultados e avaliação.
 // Recursos do template demonstrados aqui: #tabela lendo CSV, #tabela com células mescladas
 // (rowspan/colspan), gráficos cetz-plot (pizza e barras) importados de assets/, e fonte
 // personalizada / fonte removida (source:).
 // Pode ser aberto sozinho no preview: o #show: capitulo.with(...) aplica o estilo e a numeração.
 // Rótulos de outros capítulos aparecem como ‹rótulo› em vermelho; no main.typ, saem certos.
 #import "../ifbasaj-tcc/imports.typ": *
-#show: capitulo.with(numero: 5)
+#show: capitulo.with(numero: 6)
 #import "../assets/graficos/pizza.typ": pizza
 #import "../assets/graficos/barras.typ": barras
 
 = Resultados e avaliação <cap-resultados>
 
-#orientacao(regras: "RES-01 a RES-04")[
+#orientacao[
   DEVE aplicar a avaliação planejada na @sec-avaliacao, com evidências: métricas, dados, testes,
-  telas; discutir os resultados à luz do referencial e dos trabalhos relacionados;
+  telas; discutir os resultados à luz do referencial e dos trabalhos correlatos (@cap-correlatos);
   dizer se a hipótese da @sec-hipotese se sustentou e declarar as limitações.
   NÃO DEVE apresentar conceito teórico novo, mudar o método nem afirmar algo sem evidência.
 ]
@@ -60,7 +60,7 @@ Gráficos feitos com cetz-plot ficam em `assets/graficos/` e são importados com
 
 == Discussão
 
-#orientacao(regras: "RES-02 e RES-03")[Compare os resultados com os trabalhos da @sec-trabalhos-relacionados e responda à hipótese da @sec-hipotese.]
+#orientacao[Compare os resultados com os trabalhos correlatos do @cap-correlatos e responda à hipótese da @sec-hipotese.]
 
 #lorem(60)
 

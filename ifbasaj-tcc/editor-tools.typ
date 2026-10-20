@@ -4,9 +4,7 @@
 // Caixa de orientação para o aluno: explica o que a seção DEVE / NÃO DEVE conter.
 // É andaime de escrita — apague cada #orientacao[...] quando a seção estiver escrita;
 // orientação esquecida em seção pronta conta como texto de exemplo do template.
-// `regras:` traz os códigos das regras da seção (ex.: "INT-11"), os mesmos citados pelo
-// orientador nas issues. Lista completa: normas/conteudo-por-secao.md do orientador-claudio.
-#let orientacao(body, regras: none) = block(
+#let orientacao(body) = block(
   width: 100%,
   inset: 8pt,
   radius: 3pt,
@@ -17,6 +15,5 @@
     set par(first-line-indent: 0pt, leading: 0.6em, spacing: 0.8em, justify: false)
     [*Orientação* (apague ao escrever a seção). ]
     body
-    if regras != none [ #text(size: 9pt, fill: luma(90))[_Regras: #regras._]]
   },
 )

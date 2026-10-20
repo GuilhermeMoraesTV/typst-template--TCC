@@ -1,7 +1,7 @@
 // capitulos/02-referencial-teorico.typ — Capítulo 2: Referencial teórico.
 // Recursos do template demonstrados aqui: todas as formas de citação da NBR 10520:2023
-// (#cite, #prose, @chave, localizador, múltiplas fontes, #citacao-curta, #citacao-longa)
-// e #quadro (comparativo de trabalhos relacionados, com colunas definidas).
+// (#cite, #prose, @chave, localizador, múltiplas fontes, #citacao-curta, #citacao-longa).
+// Os trabalhos correlatos têm capítulo próprio: capitulos/03-trabalhos-correlatos.typ.
 // Pode ser aberto sozinho no preview: o #show: capitulo.with(...) aplica o estilo e a numeração.
 // Rótulos de outros capítulos aparecem como ‹rótulo› em vermelho; no main.typ, saem certos.
 #import "../ifbasaj-tcc/imports.typ": *
@@ -9,7 +9,7 @@
 
 = Referencial teórico <cap-referencial>
 
-#orientacao(regras: "REF-01 a REF-04")[
+#orientacao[
   Cada seção DEVE se ligar a um objetivo específico ou a uma decisão do trabalho, com
   fontes acadêmicas e atuais que dialoguem entre si. NÃO DEVE descrever o sistema do
   aluno nem trazer resultados, nem ser "colcha de retalhos", um parágrafo por autor. Os títulos das seções podem ser adaptados ao tema.
@@ -17,7 +17,7 @@
 
 == Conceitos da área do problema <sec-conceitos>
 
-#orientacao(regras: "REF-05")[Conceitos da área do problema indispensáveis para entender o restante do texto.]
+#orientacao[Conceitos da área do problema indispensáveis para entender o restante do texto.]
 
 // Citação indireta parentética: autor e ano entre parênteses, ao fim da frase.
 A engenharia de software reúne práticas para produzir software de qualidade com custo previsível #cite("sommerville2011").
@@ -36,7 +36,7 @@ Há convergência na literatura sobre a importância da modularidade #cite("mart
 
 == Tecnologias utilizadas <sec-tecnologias>
 
-#orientacao(regras: "REF-06 e REF-07")[
+#orientacao[
   Explique por que cada tecnologia importa para o problema; NÃO DEVE virar tutorial nem manual de
   instalação. NÃO DEVE usar blog ou documentação de fornecedor como única base de conceito
   central. A justificativa da escolha fica na @sec-ferramentas (Metodologia).
@@ -56,30 +56,6 @@ Para #prose("newman2021", supplement: [p. 2]), microsserviços são #citacao-cur
 
 == Engenharia de software <sec-engenharia>
 
-#orientacao(regras: "REF-08")[Conceitos de engenharia de software que o trabalho aplica: processo, requisitos, arquitetura, testes.]
+#orientacao[Conceitos de engenharia de software que o trabalho aplica: processo, requisitos, arquitetura, testes.]
 
 #lorem(60)
-
-== Trabalhos relacionados <sec-trabalhos-relacionados>
-
-#orientacao(regras: "REF-09 e REF-10")[
-  DEVE comparar os trabalhos com critérios explícitos, de preferência num quadro, e fechar
-  mostrando a lacuna que este TCC ocupa. NÃO DEVE só listar trabalhos.
-  Quadro (bordas fechadas) é para conteúdo textual; Tabela (bordas abertas) é para dados numéricos.
-]
-
-O @qua-trabalhos-relacionados compara os trabalhos analisados segundo os critérios ...
-
-#quadro(
-  columns: (1.3fr, 1fr, 1fr, 1fr),
-  align: (left, center, center, center),
-  (
-    [*Critério*], [*Trabalho A*], [*Trabalho B*], [*Este trabalho*],
-    [Plataforma], [Web], [Mobile], [Web e mobile],
-    [Código aberto], [Não], [Sim], [Sim],
-    [Avaliação com usuários], [Não], [Parcial], [Sim],
-  ),
-  caption: [Comparativo entre os trabalhos relacionados],
-) <qua-trabalhos-relacionados>
-
-Como se observa, nenhum dos trabalhos analisados ... — essa é a lacuna que este trabalho ocupa.

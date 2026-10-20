@@ -343,11 +343,12 @@ Tags com hífen (`v1.0.0-rc1`, `v0.2-banca`) são publicadas como pré-release. 
 ├── pre-textuais/            # resumo, abstract, dedicatória, agradecimentos, epígrafe, errata
 ├── capitulos/               # um arquivo por capítulo, com #orientacao[...] e exemplos
 │   ├── 01-introducao.typ            # siglas, glossário, citações, nota de rodapé, objetivos
-│   ├── 02-referencial-teorico.typ   # todas as formas de citação, quadro comparativo
-│   ├── 03-metodologia.typ           # diagrama cetz, quadro de ferramentas, equações
-│   ├── 04-desenvolvimento.typ       # requisitos, arquitetura, UML, sourcecraft, código, algoritmo
-│   ├── 05-resultados.typ            # tabela CSV, tabela com células mescladas, gráficos
-│   └── 06-consideracoes-finais.typ
+│   ├── 02-referencial-teorico.typ   # todas as formas de citação
+│   ├── 03-trabalhos-correlatos.typ  # critérios, objetivo/solução/lacuna, quadro comparativo
+│   ├── 04-metodologia.typ           # diagrama cetz, quadro de ferramentas, equações
+│   ├── 05-desenvolvimento.typ       # requisitos, arquitetura, UML, sourcecraft, código, algoritmo
+│   ├── 06-resultados.typ            # tabela CSV, tabela com células mescladas, gráficos
+│   └── 07-consideracoes-finais.typ
 ├── pos-textuais/            # apêndices (material do aluno) e anexos (de terceiros)
 ├── data/resultados.csv
 ├── assets/                  # algoritmos, códigos, diagramas, gráficos, imagens, ficha
@@ -361,14 +362,15 @@ a seção DEVE / NÃO DEVE conter; apague-as ao escrever a seção.
 ### Estrutura obrigatória e regras de cada seção
 
 A ordem dos capítulos e seções de `capitulos/` é a estrutura recomendada pelo curso: os títulos
-podem ser adaptados ao tema, mas não a ordem nem o papel de cada seção. Dois exemplos que a
-revisão confere sempre: a hipótese fica só na seção 1.3 e os objetivos específicos são lista
-**não numerada** (marcador `-`).
+podem ser adaptados ao tema, mas não a ordem nem o papel de cada seção. Exemplos que a
+revisão confere sempre: a hipótese fica só na seção 1.3; os objetivos específicos são lista
+**não numerada** (marcador `-`); os **trabalhos correlatos** são um capítulo próprio (3), entre o
+referencial teórico e a metodologia, e cada trabalho traz objetivo, solução e lacuna.
 
-Cada caixa de orientação termina com os **códigos das regras** da seção (ex.: `INT-11`). São os
-mesmos códigos que o orientador cita nas issues do seu repositório, então dá para achar a regra
-direto no capítulo. A lista completa das regras e os roteiros das etapas de orientação (00
-Concepção a 09 Defesa) estão no repositório
+As caixas de orientação de cada seção descrevem o que ela DEVE e NÃO DEVE conter; as issues que
+o orientador abre no seu repositório explicam cada apontamento com o mesmo nível de detalhe. A
+lista completa das regras e os roteiros das etapas de orientação (00 Concepção a 09 Defesa) estão
+no repositório
 [`orientador-claudio`](https://github.com/ifba-saj-ads-tcc/orientador-claudio):
 [`normas/conteudo-por-secao.md`](https://github.com/ifba-saj-ads-tcc/orientador-claudio/blob/master/normas/conteudo-por-secao.md)
 e [`etapas/`](https://github.com/ifba-saj-ads-tcc/orientador-claudio/tree/master/etapas).

@@ -11,7 +11,7 @@
 
 = Resultados e avaliação <cap-resultados>
 
-#orientacao[
+#orientacao(regras: "RES-01 a RES-04")[
   DEVE aplicar a avaliação planejada na @sec-avaliacao, com evidências: métricas, dados, testes,
   telas; discutir os resultados à luz do referencial e dos trabalhos relacionados;
   dizer se a hipótese da @sec-hipotese se sustentou e declarar as limitações.
@@ -60,7 +60,7 @@ Gráficos feitos com cetz-plot ficam em `assets/graficos/` e são importados com
 
 == Discussão
 
-#orientacao[Compare os resultados com os trabalhos da @sec-trabalhos-relacionados e responda à hipótese da @sec-hipotese.]
+#orientacao(regras: "RES-02 e RES-03")[Compare os resultados com os trabalhos da @sec-trabalhos-relacionados e responda à hipótese da @sec-hipotese.]
 
 #lorem(60)
 

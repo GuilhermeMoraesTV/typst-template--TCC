@@ -17,6 +17,7 @@ Template de documento [Typst](https://typst.app) para Trabalho de Conclusão de 
     - [2. VS Code + Tinymist](#2-vs-code--tinymist)
   - [Alternativa sem VS Code](#alternativa-sem-vs-code)
   - [Como começar](#como-começar)
+    - [No repositório do seu projeto](#no-repositório-do-seu-projeto)
   - [O que preencher — `template.with(...)`](#o-que-preencher--templatewith)
     - [Tabela de parâmetros](#tabela-de-parâmetros)
     - [Exemplo mínimo copiável](#exemplo-mínimo-copiável)
@@ -28,6 +29,7 @@ Template de documento [Typst](https://typst.app) para Trabalho de Conclusão de 
     - [Abreviaturas, glossário, apêndices e anexos](#abreviaturas-glossário-apêndices-e-anexos)
   - [Compilação — digital vs impressão](#compilação--digital-vs-impressão)
   - [Estrutura de pastas](#estrutura-de-pastas)
+    - [Estrutura obrigatória e regras de cada seção](#estrutura-obrigatória-e-regras-de-cada-seção)
   - [FAQ / Troubleshooting](#faq--troubleshooting)
 
 ## O que é
@@ -131,6 +133,25 @@ typst compile main.typ
 
 - O arquivo para editar é `main.typ` — ele já contém um TCC de exemplo com todos os recursos.
 - Para começar seu TCC, edite `main.typ` diretamente.
+
+### No repositório do seu projeto
+
+O TCC de ADS fica no **mesmo repositório do código do projeto**, na pasta `docs/TCC/`. É ali que
+o orientador lê o texto e abre as issues de acompanhamento.
+
+```
+<repo-do-projeto>/
+  README.md        # o que é o projeto e como rodar
+  src/ ...         # código do projeto (organização livre, fora de docs/)
+  docs/
+    TCC/           # conteúdo deste template: main.typ, capitulos/, referencias.bib, assets/ ...
+  .github/workflows/pdf.yml   # copiado deste template, com TCC_DIR: docs/TCC
+```
+
+1. Copie o conteúdo deste repositório (menos `.git/` e `.github/`) para `docs/TCC/` do seu projeto.
+2. Copie `.github/workflows/pdf.yml` para a raiz do projeto e troque `TCC_DIR: .` por
+   `TCC_DIR: docs/TCC`.
+3. Abra `docs/TCC/main.typ` no VS Code para escrever.
 
 ## O que preencher — `template.with(...)`
 
@@ -336,6 +357,21 @@ Tags com hífen (`v1.0.0-rc1`, `v0.2-banca`) são publicadas como pré-release. 
 Cada capítulo importa a biblioteca com `#import "../ifbasaj-tcc/imports.typ": *` e usa caminhos
 relativos ao próprio arquivo (`image("../assets/...")`). As caixas `#orientacao[...]` resumem o que
 a seção DEVE / NÃO DEVE conter; apague-as ao escrever a seção.
+
+### Estrutura obrigatória e regras de cada seção
+
+A ordem dos capítulos e seções de `capitulos/` é a estrutura recomendada pelo curso: os títulos
+podem ser adaptados ao tema, mas não a ordem nem o papel de cada seção. Dois exemplos que a
+revisão confere sempre: a hipótese fica só na seção 1.3 e os objetivos específicos são lista
+**não numerada** (marcador `-`).
+
+Cada caixa de orientação termina com os **códigos das regras** da seção (ex.: `INT-11`). São os
+mesmos códigos que o orientador cita nas issues do seu repositório, então dá para achar a regra
+direto no capítulo. A lista completa das regras e os roteiros das etapas de orientação (00
+Concepção a 09 Defesa) estão no repositório
+[`orientador-claudio`](https://github.com/ifba-saj-ads-tcc/orientador-claudio):
+[`normas/conteudo-por-secao.md`](https://github.com/ifba-saj-ads-tcc/orientador-claudio/blob/master/normas/conteudo-por-secao.md)
+e [`etapas/`](https://github.com/ifba-saj-ads-tcc/orientador-claudio/tree/master/etapas).
 
 ### Editando um capítulo sozinho
 

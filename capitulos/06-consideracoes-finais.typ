@@ -6,7 +6,7 @@
 
 = Considerações finais <cap-consideracoes>
 
-#orientacao[
+#orientacao(regras: "CON-01 a CON-04")[
   DEVE retomar o objetivo geral e cada objetivo específico, na mesma ordem da
   @sec-objetivos-especificos, dizendo se foi atingido; confrontar a hipótese da
   @sec-hipotese com os resultados do @cap-resultados; trazer limitações e trabalhos

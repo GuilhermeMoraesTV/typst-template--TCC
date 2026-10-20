@@ -8,20 +8,20 @@
 
 = Metodologia <cap-metodologia>
 
-#orientacao[
+#orientacao(regras: "MET-01 e MET-02")[
   Cada passo metodológico DEVE se ligar a um objetivo específico da @sec-objetivos-especificos. NÃO DEVE trazer resultados, telas do sistema pronto nem repetir a teoria do
   @cap-referencial.
 ]
 
 == Natureza da pesquisa <sec-natureza>
 
-#orientacao[Classifique a pesquisa quanto à natureza, à abordagem e aos objetivos, e justifique cada classificação.]
+#orientacao(regras: "MET-03")[Classifique a pesquisa quanto à natureza, à abordagem e aos objetivos, e justifique cada classificação.]
 
 Quanto à natureza, esta pesquisa classifica-se como aplicada, pois ... #cite("wazlawick2014"). #lorem(30)
 
 == Método de desenvolvimento <sec-metodo>
 
-#orientacao[
+#orientacao(regras: "MET-04")[
   Descreva o método usado de fato (ex.: Scrum adaptado, prototipação) e como foi aplicado; NÃO
   DEVE copiar a descrição genérica do livro. Um diagrama das etapas ajuda o leitor.
 ]
@@ -51,7 +51,7 @@ A @fig-etapas resume as etapas do trabalho e o objetivo específico que cada uma
 
 == Levantamento de requisitos <sec-levantamento>
 
-#orientacao[
+#orientacao(regras: "MET-05")[
   Diga como os requisitos foram levantados: com quem e com quais técnicas (entrevista,
   questionário, observação). A lista de requisitos fica na @sec-requisitos.
   Instrumentos próprios (roteiros, questionários) vão para o Apêndice.
@@ -61,7 +61,7 @@ Os requisitos foram levantados por meio de entrevistas semiestruturadas com ...,
 
 == Tecnologias e ferramentas <sec-ferramentas>
 
-#orientacao[Justifique a escolha de cada tecnologia e ferramenta. A teoria sobre elas fica na @sec-tecnologias.]
+#orientacao(regras: "MET-06")[Justifique a escolha de cada tecnologia e ferramenta. A teoria sobre elas fica na @sec-tecnologias.]
 
 #quadro(
   columns: (auto, 1fr),
@@ -77,7 +77,7 @@ Os requisitos foram levantados por meio de entrevistas semiestruturadas com ...,
 
 == Procedimentos de avaliação <sec-avaliacao>
 
-#orientacao[
+#orientacao(regras: "MET-07")[
   Defina como o software será avaliado: métricas, critérios, participantes e instrumentos. O @cap-resultados segue exatamente este plano. Métricas com fórmula entram como
   equação numerada e são referenciadas pelo rótulo.
 ]

@@ -11,7 +11,7 @@
 
 == Contextualização <sec-contextualizacao>
 
-#orientacao[
+#orientacao(regras: "INT-01 a INT-03")[
   DEVE situar o tema e o cenário real em que o problema aparece, sempre com fontes.
   NÃO DEVE apresentar a solução, a ferramenta ou a tecnologia do trabalho — a proposta só aparece
   na @sec-hipotese. NÃO DEVE adiantar resultados nem trazer citação longa.
@@ -34,7 +34,7 @@ Toda figura precisa ser citada no texto antes ou logo depois de aparecer, como n
 
 == Problema de pesquisa <sec-problema>
 
-#orientacao[
+#orientacao(regras: "INT-04 e INT-05")[
   DEVE formular o problema de forma explícita, de preferência como pergunta, e dizer o que fica
   fora do escopo. NÃO DEVE ser uma solução disfarçada, como "o problema é que não existe
   o sistema X".
@@ -44,9 +44,9 @@ Diante do cenário descrito, este trabalho investiga a seguinte questão: _como 
 
 Fica fora do escopo deste trabalho ...
 
-== Hipótese <sec-hipotese>
+== Hipótese ou pressuposto da solução <sec-hipotese>
 
-#orientacao[
+#orientacao(regras: "INT-06 a INT-08")[
   DEVE ficar exatamente aqui: depois do problema e antes dos objetivos. É o único lugar
   do capítulo em que a proposta de solução aparece. DEVE ser testável: o Capítulo 5 precisa
   conseguir dizer se ela se sustentou.
@@ -56,7 +56,7 @@ Parte-se do pressuposto de que ... #lorem(30)
 
 == Objetivo geral <sec-objetivo-geral>
 
-#orientacao[
+#orientacao(regras: "INT-09 e INT-10")[
   Uma frase, com um único verbo no infinitivo, que responde ao problema da @sec-problema.
   NÃO DEVE ser um passo de método, como "fazer revisão bibliográfica".
 ]
@@ -65,7 +65,7 @@ Desenvolver ... para ...
 
 == Objetivos específicos <sec-objetivos-especificos>
 
-#orientacao[
+#orientacao(regras: "INT-11 a INT-13")[
   Lista NÃO numerada, com marcador `-`, de 3 a 5 itens, cada um com um verbo no
   infinitivo e verificável nas Considerações finais. Evite verbos vagos: conhecer,
   entender, compreender, estudar.
@@ -78,7 +78,7 @@ Desenvolver ... para ...
 
 == Justificativa <sec-justificativa>
 
-#orientacao[
+#orientacao(regras: "INT-14 e INT-15")[
   DEVE explicar por que o problema importa, com evidências: dados, fontes, contexto.
   NÃO DEVE se basear só em opinião nem repetir a contextualização.
 ]
@@ -87,7 +87,7 @@ Desenvolver ... para ...
 
 == Organização do trabalho <sec-organizacao>
 
-#orientacao[
+#orientacao(regras: "INT-16 e INT-17")[
   Escreva por último, quando todos os capítulos existirem. Um parágrafo curto por capítulo. Use referências cruzadas: se um título mudar, o número se atualiza sozinho.
 ]
 

@@ -9,7 +9,7 @@
 
 = Referencial teórico <cap-referencial>
 
-#orientacao[
+#orientacao(regras: "REF-01 a REF-04")[
   Cada seção DEVE se ligar a um objetivo específico ou a uma decisão do trabalho, com
   fontes acadêmicas e atuais que dialoguem entre si. NÃO DEVE descrever o sistema do
   aluno nem trazer resultados, nem ser "colcha de retalhos", um parágrafo por autor. Os títulos das seções podem ser adaptados ao tema.
@@ -17,7 +17,7 @@
 
 == Conceitos da área do problema <sec-conceitos>
 
-#orientacao[Conceitos da área do problema indispensáveis para entender o restante do texto.]
+#orientacao(regras: "REF-05")[Conceitos da área do problema indispensáveis para entender o restante do texto.]
 
 // Citação indireta parentética: autor e ano entre parênteses, ao fim da frase.
 A engenharia de software reúne práticas para produzir software de qualidade com custo previsível #cite("sommerville2011").
@@ -36,7 +36,7 @@ Há convergência na literatura sobre a importância da modularidade #cite("mart
 
 == Tecnologias utilizadas <sec-tecnologias>
 
-#orientacao[
+#orientacao(regras: "REF-06 e REF-07")[
   Explique por que cada tecnologia importa para o problema; NÃO DEVE virar tutorial nem manual de
   instalação. NÃO DEVE usar blog ou documentação de fornecedor como única base de conceito
   central. A justificativa da escolha fica na @sec-ferramentas (Metodologia).
@@ -56,13 +56,13 @@ Para #prose("newman2021", supplement: [p. 2]), microsserviços são #citacao-cur
 
 == Engenharia de software <sec-engenharia>
 
-#orientacao[Conceitos de engenharia de software que o trabalho aplica: processo, requisitos, arquitetura, testes.]
+#orientacao(regras: "REF-08")[Conceitos de engenharia de software que o trabalho aplica: processo, requisitos, arquitetura, testes.]
 
 #lorem(60)
 
 == Trabalhos relacionados <sec-trabalhos-relacionados>
 
-#orientacao[
+#orientacao(regras: "REF-09 e REF-10")[
   DEVE comparar os trabalhos com critérios explícitos, de preferência num quadro, e fechar
   mostrando a lacuna que este TCC ocupa. NÃO DEVE só listar trabalhos.
   Quadro (bordas fechadas) é para conteúdo textual; Tabela (bordas abertas) é para dados numéricos.

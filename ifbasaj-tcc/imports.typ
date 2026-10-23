@@ -5,7 +5,7 @@
 #import "layout.typ": default-theme
 #import "pre-textual.typ": template
 #import "elements.typ": figura, quadro, tabela, fonte, myself
-#import "bibliography.typ": cite, prose, references, register-bib, citacao-curta, citacao-longa
+#import "bibliography.typ": cite, prose, apud, references, register-bib, citacao-curta, citacao-longa
 #import "code-algo.typ": codigo, algoritmo
 #import "diagrams.typ": diagram, cetz
 #import "charts.typ": chart

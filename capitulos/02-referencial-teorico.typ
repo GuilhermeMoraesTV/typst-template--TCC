@@ -1,6 +1,6 @@
 // capitulos/02-referencial-teorico.typ — Capítulo 2: Referencial teórico.
 // Recursos do template demonstrados aqui: todas as formas de citação da NBR 10520:2023
-// (#cite, #prose, @chave, localizador, múltiplas fontes, #citacao-curta, #citacao-longa).
+// (#cite, #prose, @chave, localizador, múltiplas fontes, #apud, #citacao-curta, #citacao-longa).
 // Os trabalhos correlatos têm capítulo próprio: capitulos/03-trabalhos-correlatos.typ.
 // Pode ser aberto sozinho no preview: o #show: capitulo.with(...) aplica o estilo e a numeração.
 // Rótulos de outros capítulos aparecem como ‹rótulo› em vermelho; no main.typ, saem certos.
@@ -33,6 +33,11 @@ Essa visão é compartilhada por outros autores @newman2021.
 
 // Múltiplas fontes: separadas por ponto e vírgula, na ordem alfabética.
 Há convergência na literatura sobre a importância da modularidade #cite("martin2008", "newman2021", "sommerville2011").
+
+// Citação de citação (apud): só quando você NÃO teve acesso à obra original.
+// Autor e ano do original vão como texto; a chave é da obra que você leu, e só ela entra nas
+// Referências. Sempre que conseguir o original, cite-o diretamente.
+O custo de corrigir um defeito cresce à medida que o projeto avança #apud("Boehm", "1981", "sommerville2011", supplement: [p. 23]). Na forma narrativa, #apud("Boehm", "1981", "sommerville2011", narrativo: true) chega à mesma conclusão.
 
 == Tecnologias utilizadas <sec-tecnologias>
 

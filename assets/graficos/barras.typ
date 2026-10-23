@@ -1,6 +1,6 @@
 // assets/graficos/barras.typ — Gráfico de barras (cetz-plot).
-#import "@preview/cetz:0.4.2": canvas
-#import "@preview/cetz-plot:0.1.3": chart
+// canvas e chart vêm do pacote do template (cetz e cetz-plot nas versões que ele usa).
+#import "../../ifbasaj-tcc/charts.typ": canvas, chart
 #let barras = canvas({
   chart.columnchart(
     (

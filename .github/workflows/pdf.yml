@@ -6,7 +6,8 @@
 #     git tag v1.0.0 && git push origin v1.0.0
 #   Tags com hífen (v1.0.0-rc1, v0.3-qualificacao) viram pré-release.
 #
-# Em um repositório de projeto em que o TCC fica em docs/TCC, troque TCC_DIR para docs/TCC.
+# Repositório só do TCC: deixe TCC_DIR: . (main.typ na raiz).
+# Repositório com código do projeto + TCC (TCC em docs/): troque TCC_DIR para docs.
 
 name: PDF do TCC
 

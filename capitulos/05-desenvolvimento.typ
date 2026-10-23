@@ -1,7 +1,8 @@
 // capitulos/05-desenvolvimento.typ — Capítulo 5: Desenvolvimento do software.
 // Recursos do template demonstrados aqui: #quadro de requisitos, diagrama cetz importado de
 // assets/, imagem SVG gerada pelo PlantUML, diagrama de classes gerado do código-fonte
-// (sourcecraft), #codigo com arquivo externo e nome de arquivo, #algoritmo e código inline.
+// (sourcecraft), #codigo com arquivo externo e nome de arquivo, #algoritmo, código inline,
+// captura de tela em PNG e duas telas lado a lado numa só figura.
 // Pode ser aberto sozinho no preview: o #show: capitulo.with(...) aplica o estilo e a numeração.
 // Rótulos de outros capítulos aparecem como ‹rótulo› em vermelho; no main.typ, saem certos.
 #import "../ifbasaj-tcc/imports.typ": *
@@ -92,6 +93,29 @@ A busca de produtos segue o @alg-busca. Algoritmos em pseudocódigo ficam em arq
   read("../assets/algoritmos/busca.alg"),
   caption: [Busca linear],
 ) <alg-busca>
+
+A @fig-tela mostra a tela inicial do sistema.
+
+// Captura de tela (PNG ou JPG): troque o arquivo de exemplo pelo print real do sistema.
+// Sem source:, a fonte sai como "Elaborado pelo próprio autor (ano)".
+#figura(
+  image("../assets/logo.png", width: 30%),
+  caption: [Tela inicial do sistema],
+) <fig-tela>
+
+As telas de login e de cadastro do aplicativo aparecem lado a lado na @fig-telas.
+
+// Duas imagens numa só figura: grid com uma coluna por imagem e a identificação (a), (b).
+#figura(
+  grid(
+    columns: 2,
+    gutter: 2em,
+    align: center,
+    stack(spacing: 0.5em, image("../assets/logo.png", width: 60%), text(size: 10pt)[(a) Login]),
+    stack(spacing: 0.5em, image("../assets/logo.png", width: 60%), text(size: 10pt)[(b) Cadastro]),
+  ) + v(0.6em),
+  caption: [Telas de login e de cadastro do aplicativo],
+) <fig-telas>
 
 == Testes <sec-testes>
 

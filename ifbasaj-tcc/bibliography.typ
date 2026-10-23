@@ -259,6 +259,27 @@
   }
 }
 
+// Citação de citação (apud), NBR 10520:2023: só quando não houve acesso ao original.
+// `autor` e `ano` são da obra ORIGINAL (não entra nas Referências); `key` é a obra
+// CONSULTADA, que vai para as Referências.
+//   #apud("Boehm", "1981", "sommerville2011")                 -> (BOEHM, 1981 apud SOMMERVILLE, 2011)
+//   #apud("Boehm", "1981", "sommerville2011", narrativo: true) -> Boehm (1981 apud SOMMERVILLE, 2011)
+#let apud(autor, ano, key, supplement: none, narrativo: false) = {
+  _mark(key)
+  context {
+    let entries = _entries()
+    let smap = _suffixes(_cite-order(query(_CM)), entries)
+    let e = entries.at(key, default: (type: "misc", fields: (author: key, year: "")))
+    let consultada = [#_cite-authors(e.fields.at("author", default: key), caixa: "upper"), #(_year(e) + smap.at(key, default: ""))]
+    let supp = if supplement != none { [, #supplement] } else { [] }
+    if narrativo {
+      text(fill: _text-color)[#autor (#ano _apud_ #consultada#supp)]
+    } else {
+      text(fill: _text-color)[(#upper(autor), #ano _apud_ #consultada#supp)]
+    }
+  }
+}
+
 // ---------------------------------------------------------------------------
 // CITAÇÕES DIRETAS
 // ---------------------------------------------------------------------------

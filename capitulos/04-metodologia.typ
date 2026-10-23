@@ -1,6 +1,7 @@
 // capitulos/04-metodologia.typ — Capítulo 4: Metodologia.
-// Recursos do template demonstrados aqui: #diagram (fluxo desenhado com cetz), #quadro
-// de ferramentas e #equacao (métrica numerada, referenciada por @rótulo).
+// Recursos do template demonstrados aqui: #diagram (fluxo desenhado com cetz), alíneas
+// (lista a), b), c) da NBR 6024), #quadro de ferramentas, #equacao (métrica numerada,
+// referenciada por @rótulo) e #figura-equacao (equação com legenda).
 // Pode ser aberto sozinho no preview: o #show: capitulo.with(...) aplica o estilo e a numeração.
 // Rótulos de outros capítulos aparecem como ‹rótulo› em vermelho; no main.typ, saem certos.
 #import "../ifbasaj-tcc/imports.typ": *
@@ -47,7 +48,19 @@ A @fig-etapas resume as etapas do trabalho e o objetivo específico que cada uma
   caption: [Etapas metodológicas do trabalho],
 ) <fig-etapas>
 
-#lorem(40)
+As etapas foram conduzidas da seguinte forma:
+
+// Alíneas (NBR 6024): letras minúsculas com parêntese, texto em minúscula, itens terminados
+// em ponto e vírgula e o último em ponto. O #set fica dentro de #[...] para valer só aqui.
+#[
+  #set enum(numbering: "a)")
+  + levantamento de requisitos com os usuários do setor;
+  + modelagem dos casos de uso e das classes de domínio;
+  + implementação iterativa, em ciclos de duas semanas;
+  + avaliação com usuários, conforme a @sec-avaliacao.
+]
+
+#lorem(30)
 
 == Levantamento de requisitos <sec-levantamento>
 
@@ -90,3 +103,11 @@ A usabilidade será medida com o questionário #abbrev("sus", long: "System Usab
 O tempo médio de resposta, usado na avaliação de desempenho, é calculado pela @eq-media.
 
 #equacao[$ overline(t) = 1/n sum_(k=1)^n t_k $] <eq-media>
+
+A dispersão dos tempos de resposta é medida pelo desvio padrão, apresentado na @eq-desvio.
+
+// #figura-equacao: equação com legenda, para quando ela precisa de título próprio.
+// O rótulo vai em label:, e a numeração continua a das demais equações.
+#figura-equacao(caption: [Desvio padrão amostral dos tempos de resposta], label: <eq-desvio>)[
+  $ s = sqrt(1/(n-1) sum_(k=1)^n (t_k - overline(t))^2) $
+]

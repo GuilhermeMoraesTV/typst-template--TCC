@@ -17,11 +17,12 @@ Template de documento [Typst](https://typst.app) para Trabalho de Conclusão de 
     - [2. VS Code + Tinymist](#2-vs-code--tinymist)
   - [Alternativa sem VS Code](#alternativa-sem-vs-code)
   - [Como começar](#como-começar)
-    - [No repositório do seu projeto](#no-repositório-do-seu-projeto)
+    - [Onde colocar o template](#onde-colocar-o-template)
   - [O que preencher — `template.with(...)`](#o-que-preencher--templatewith)
     - [Tabela de parâmetros](#tabela-de-parâmetros)
     - [Exemplo mínimo copiável](#exemplo-mínimo-copiável)
   - [Escrevendo seu TCC](#escrevendo-seu-tcc)
+    - [Recursos e onde ver o exemplo](#recursos-e-onde-ver-o-exemplo)
     - [Figuras, tabelas, quadros](#figuras-tabelas-quadros)
     - [Código e algoritmo](#código-e-algoritmo)
     - [Equações e diagramas](#equações-e-diagramas)
@@ -134,24 +135,34 @@ typst compile main.typ
 - O arquivo para editar é `main.typ` — ele já contém um TCC de exemplo com todos os recursos.
 - Para começar seu TCC, edite `main.typ` diretamente.
 
-### No repositório do seu projeto
+### Onde colocar o template
 
-O TCC de ADS fica no **mesmo repositório do código do projeto**, na pasta `docs/TCC/`. É ali que
-o orientador lê o texto e abre as issues de acompanhamento.
+Onde o TCC fica depende do que o seu repositório contém. É ali que o orientador lê o texto e abre
+as issues de acompanhamento.
+
+| Seu repositório | Onde fica o TCC |
+|---|---|
+| **Só o TCC** | na raiz do repositório |
+| **Código do projeto + TCC** | na pasta `docs/` |
+
+**Só o TCC.** Use este template como o próprio repositório ("Use this template" no GitHub, ou
+clone e troque o remoto). O `main.typ` fica na raiz e o workflow funciona sem mudança.
+
+**Código do projeto + TCC.**
 
 ```
 <repo-do-projeto>/
   README.md        # o que é o projeto e como rodar
   src/ ...         # código do projeto (organização livre, fora de docs/)
-  docs/
-    TCC/           # conteúdo deste template: main.typ, capitulos/, referencias.bib, assets/ ...
-  .github/workflows/pdf.yml   # copiado deste template, com TCC_DIR: docs/TCC
+  docs/            # conteúdo deste template: main.typ, capitulos/, referencias.bib, assets/ ...
+  .github/workflows/pdf.yml   # copiado deste template, com TCC_DIR: docs
 ```
 
-1. Copie o conteúdo deste repositório (menos `.git/` e `.github/`) para `docs/TCC/` do seu projeto.
+1. Copie o conteúdo deste repositório (menos `.git/` e `.github/`) para a pasta `docs/` do seu projeto.
 2. Copie `.github/workflows/pdf.yml` para a raiz do projeto e troque `TCC_DIR: .` por
-   `TCC_DIR: docs/TCC`.
-3. Abra `docs/TCC/main.typ` no VS Code para escrever.
+   `TCC_DIR: docs`.
+3. Abra `docs/main.typ` no VS Code para escrever. Se o projeto tiver outra documentação, deixe-a
+   em subpastas de `docs/` que não se misturem com os arquivos do template.
 
 ## O que preencher — `template.with(...)`
 
@@ -227,6 +238,29 @@ Seu texto aqui...
 
 Funções de formatação reexportadas por `ifbasaj-tcc/imports.typ` — os exemplos abaixo usam os arquivos do template.
 
+### Recursos e onde ver o exemplo
+
+| Recurso | Função | Exemplo em |
+|---|---|---|
+| Figura com imagem SVG e fonte de terceiros | `#figura(..., source: [...])` | `capitulos/01-introducao.typ` |
+| Captura de tela (PNG) e duas imagens numa figura | `#figura(image(...))`, `#figura(grid(...))` | `capitulos/05-desenvolvimento.typ` |
+| Quadro (bordas fechadas, conteúdo textual) | `#quadro` | `capitulos/03-trabalhos-correlatos.typ`, `04-metodologia.typ`, `05-desenvolvimento.typ` |
+| Tabela padrão IBGE lida de CSV; células mescladas; fonte personalizada | `#tabela` | `capitulos/06-resultados.typ` |
+| Linha "Fonte" explícita | `source: myself`, `#fonte[...]` | `capitulos/06-resultados.typ` |
+| Diagrama desenhado no texto e importado | `#diagram` (cetz) | `capitulos/04-metodologia.typ`, `assets/diagramas/arquitetura.typ` |
+| Diagrama UML (PlantUML) e de classes gerado do código (sourcecraft) | `#figura(image(...))` | `capitulos/05-desenvolvimento.typ` |
+| Gráficos de pizza e barras | `chart` (cetz-plot) | `capitulos/06-resultados.typ`, `assets/graficos/` |
+| Código-fonte com arquivo externo; código inline; algoritmo | `#codigo`, `` `...` ``, `#algoritmo` | `capitulos/05-desenvolvimento.typ`, `pos-textuais/apendice-b-codigo-fonte.typ` |
+| Equação numerada; equação com legenda; matemática inline | `#equacao`, `#figura-equacao`, `$...$` | `capitulos/04-metodologia.typ` |
+| Citações indireta, narrativa, com página, múltiplas, direta curta e longa | `#cite`, `#prose`, `@chave`, `#citacao-curta`, `#citacao-longa` | `capitulos/02-referencial-teorico.typ` |
+| Citação de citação (apud) | `#apud` | `capitulos/02-referencial-teorico.typ` |
+| Siglas e glossário | `#abbrev`, `#gloss`, `#glossario` | `capitulos/01-introducao.typ`, `04-metodologia.typ`, `main.typ` |
+| Lista não numerada; alíneas a), b), c) | `-`, `#set enum(numbering: "a)")` | `capitulos/01-introducao.typ`, `04-metodologia.typ` |
+| Nota de rodapé; referência cruzada | `#footnote`, `@rótulo` | `capitulos/01-introducao.typ` |
+| Apêndices, anexos e referências | `#apendice`, `#anexo`, `#references` | `main.typ`, `pos-textuais/` |
+| Pré-textuais (ficha, errata, aprovação, dedicatória, resumo...) e listas automáticas | `template.with(...)` | `main.typ`, `pre-textuais/` |
+| Caixas de orientação (apague ao escrever) | `#orientacao` | todos os capítulos |
+
 ### Figuras, tabelas, quadros
 
 ```typst
@@ -234,9 +268,19 @@ Funções de formatação reexportadas por `ifbasaj-tcc/imports.typ` — os exem
 #tabela(caption: [Métricas], columns: (1fr, 1fr), header: ([A], [B]), ..csv("data/resultados.csv")) <tab-metricas>
 #quadro(([Critério], [Opção A], [Modelo], [Relacional]), caption: [Comparativo]) <quad-sgbd>
 
+// Captura de tela (PNG/JPG) e duas imagens numa só figura:
+#figura(image("assets/imagens/tela.png", width: 60%), caption: [Tela inicial]) <fig-tela>
+#figura(grid(columns: 2, gutter: 2em, image("a.png"), image("b.png")), caption: [Login e cadastro])
+
+// Linha "Fonte": sem source: sai "Elaborado pelo próprio autor (ano)";
+// source: [Dados da pesquisa (2026)] para texto livre; source: myself explícito;
+// #fonte[...] para uma linha avulsa fora de #figura.
+
 // Referência cruzada:
 Ver @fig-logo e @tab-metricas.
 ```
+
+Alíneas (NBR 6024): `#[ #set enum(numbering: "a)") + item;  + último item. ]`
 
 ### Código e algoritmo
 
@@ -251,6 +295,9 @@ Ativos de exemplo: `assets/codigos/Estoque.java`, `assets/codigos/Produto.java` 
 
 ```typst
 #equacao[$ e^(i pi) + 1 = 0 $] <eq-euler>
+
+// Equação com legenda ("Equação N – título"); o rótulo vai em label:
+#figura-equacao(caption: [Identidade de Euler], label: <eq-euler-legenda>)[$ e^(i pi) + 1 = 0 $]
 ```
 
 Diagramas e gráficos de exemplo: `assets/diagramas/arquitetura.typ`, `assets/diagramas/diagramauml.svg`, `assets/graficos/pizza.typ` e `assets/graficos/barras.typ`.
@@ -276,11 +323,16 @@ Segundo o autor, #citacao-curta[código limpo é legível] #cite("martin2008", s
 // Direta longa (>3 linhas, recuo 4cm, 10pt)
 #citacao-longa(autor: "Martin", ano: "2009", pagina: "42")[Texto longo...]
 
+// Citação de citação (apud): só quando não teve acesso ao original.
+// Autor e ano do original como texto; a chave é da obra consultada (só ela vai para as Referências).
+#apud("Boehm", "1981", "sommerville2011", supplement: [p. 23])  // (BOEHM, 1981 apud SOMMERVILLE, 2011, p. 23)
+#apud("Boehm", "1981", "sommerville2011", narrativo: true)     // Boehm (1981 apud SOMMERVILLE, 2011)
+
 // Bibliografia no final do documento:
 #references()
 ```
 
-Fonte: `ifbasaj-tcc/bibliography.typ` (`cite`, `prose`, `citacao-curta`, `citacao-longa`, `references`). O arquivo `referencias.bib` é lido pelo parser BibTeX do template; use `#references(title: "REFERÊNCIAS")` para imprimir as obras citadas.
+Fonte: `ifbasaj-tcc/bibliography.typ` (`cite`, `prose`, `apud`, `citacao-curta`, `citacao-longa`, `references`). O arquivo `referencias.bib` é lido pelo parser BibTeX do template; use `#references(title: "REFERÊNCIAS")` para imprimir as obras citadas.
 
 ### Abreviaturas, glossário, apêndices e anexos
 
@@ -331,7 +383,7 @@ git push origin v0.1.0
 ```
 
 Tags com hífen (`v1.0.0-rc1`, `v0.2-banca`) são publicadas como pré-release. Se o TCC ficar em
-`docs/TCC` de um repositório de projeto, altere `TCC_DIR` no início do workflow.
+`docs/`, num repositório com o código do projeto, altere `TCC_DIR` para `docs` no início do workflow.
 
 ## Estrutura de pastas
 

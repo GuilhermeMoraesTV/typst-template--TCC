@@ -1,7 +1,7 @@
 // capitulos/06-resultados.typ — Capítulo 6: Resultados e avaliação.
 // Recursos do template demonstrados aqui: #tabela lendo CSV, #tabela com células mescladas
-// (rowspan/colspan), gráficos cetz-plot (pizza e barras) importados de assets/, e fonte
-// personalizada / fonte removida (source:).
+// (rowspan/colspan), gráficos cetz-plot (pizza e barras) importados de assets/, fonte
+// personalizada (source:) e #myself.
 // Pode ser aberto sozinho no preview: o #show: capitulo.with(...) aplica o estilo e a numeração.
 // Rótulos de outros capítulos aparecem como ‹rótulo› em vermelho; no main.typ, saem certos.
 #import "../ifbasaj-tcc/imports.typ": *
@@ -56,7 +56,13 @@ Gráficos feitos com cetz-plot ficam em `assets/graficos/` e são importados com
 
 #lorem(30)
 
-#figura(barras, caption: [Número de participantes por ano]) <fig-barras>
+// Linha "Fonte" de figuras, quadros e tabelas:
+//   sem source:            "Elaborado pelo próprio autor (ano)" (padrão)
+//   source: [...]          texto livre, ex.: [Dados da pesquisa (2026)] ou [Adaptado de #prose("chave")]
+//   source: myself         o mesmo texto do padrão, escrito de forma explícita
+//   #fonte[...]            linha "Fonte – ..." avulsa, para conteúdo montado fora de #figura
+//   source: none           remove a linha; evite, a ABNT pede fonte em toda ilustração
+#figura(barras, caption: [Número de participantes por ano], source: myself) <fig-barras>
 
 == Discussão
 

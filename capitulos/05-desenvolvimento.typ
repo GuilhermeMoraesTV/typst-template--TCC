@@ -1,124 +1,50 @@
-// capitulos/05-desenvolvimento.typ — Capítulo 5: Desenvolvimento do software.
-// Recursos do template demonstrados aqui: #quadro de requisitos, diagrama cetz importado de
-// assets/, imagem SVG gerada pelo PlantUML, diagrama de classes gerado do código-fonte
-// (sourcecraft), #codigo com arquivo externo e nome de arquivo, #algoritmo, código inline,
-// captura de tela em PNG e duas telas lado a lado numa só figura.
-// Pode ser aberto sozinho no preview: o #show: capitulo.with(...) aplica o estilo e a numeração.
-// Rótulos de outros capítulos aparecem como ‹rótulo› em vermelho; no main.typ, saem certos.
+﻿// capitulos/05-desenvolvimento.typ â€” CapÃ­tulo 5: Desenvolvimento da plataforma.
 #import "../ifbasaj-tcc/imports.typ": *
 #show: capitulo.with(numero: 5)
 #import "../assets/diagramas/arquitetura.typ": arquitetura
-#import "@preview/sourcecraft:0.1.0": source-diagram
 
-= Desenvolvimento do software <cap-desenvolvimento>
+= Desenvolvimento e arquitetura do ModoQAP <cap-desenvolvimento>
 
-#orientacao[
-  Descreva o que foi feito, com decisões técnicas justificadas. Listagens longas de
-  código vão para o Apêndice. Toda figura DEVE ter fonte e ser citada no texto.
-  O que o texto afirma que foi implementado DEVE existir no repositório.
-]
+Este capÃ­tulo descreve a estrutura arquitetural, os requisitos e a modelagem funcional do ModoQAP na versÃ£o analisada, documentando as decisÃµes tÃ©cnicas que sustentam os recursos disponibilizados aos participantes da pesquisa.
 
-== Requisitos <sec-requisitos>
+== Requisitos do sistema <sec-requisitos>
 
-#orientacao[Liste os requisitos funcionais e não funcionais que saíram do levantamento da @sec-levantamento.]
-
-O @qua-requisitos apresenta os requisitos funcionais (RF) e não funcionais (RNF) do sistema.
+Os requisitos essenciais da plataforma foram estruturados para atender Ã s demandas de planejamento, execuÃ§Ã£o, monitoramento e reflexÃ£o de candidatos a concursos pÃºblicos. O @qua-requisitos sintetiza os principais requisitos funcionais (RF) e nÃ£o funcionais (RNF) contemplados na versÃ£o objeto do estudo.
 
 #quadro(
   columns: (auto, 1fr, auto),
   align: (center, left, center),
   (
-    [*ID*], [*Descrição*], [*Prioridade*],
-    [RF01], [O sistema deve permitir que o usuário se cadastre.], [Alta],
-    [RF02], [O sistema deve ...], [Média],
-    [RNF01], [O tempo de resposta das consultas deve ser inferior a 2 s.], [Alta],
+    [*ID*], [*DescriÃ§Ã£o do requisito*], [*Prioridade*],
+    [RF01], [Permitir ao usuÃ¡rio estruturar o plano de estudos por cronograma (datas fixas) ou ciclo contÃ­nuo.], [Alta],
+    [RF02], [Apresentar na tela inicial as tarefas previstas para o dia e direcionar Ã  execuÃ§Ã£o.], [Alta],
+    [RF03], [Disponibilizar temporizador integrado para contagem e registro de tempo lÃ­quido de dedicaÃ§Ã£o.], [Alta],
+    [RF04], [Permitir o registro do volume de questÃµes resolvidas e total de acertos ao tÃ©rmino da sessÃ£o.], [Alta],
+    [RF05], [Gerenciar a central de revisÃµes programadas, atrasadas e futuras.], [Alta],
+    [RF06], [Apresentar o edital verticalizado com controle visual do progresso por disciplina.], [MÃ©dia],
+    [RF07], [Consolidar histÃ³rico, metas e indicadores de desempenho (learning analytics).], [Alta],
+    [RF08], [Disponibilizar recursos complementares de simulados, ranking e grupos de estudo.], [MÃ©dia],
+    [RNF01], [Garantir tempo de resposta inferior a 2 segundos nas consultas analÃ­ticas e listagens.], [Alta],
+    [RNF02], [Assegurar compatibilidade de interface responsiva com navegadores modernos.], [Alta],
+    [RNF03], [Garantir persistÃªncia Ã­ntegra e anonimizaÃ§Ã£o de registros para a base da pesquisa.], [Alta],
   ),
-  caption: [Requisitos do sistema],
+  caption: [Requisitos funcionais e nÃ£o funcionais da versÃ£o analisada],
 ) <qua-requisitos>
 
-== Arquitetura <sec-arquitetura>
+== Arquitetura da soluÃ§Ã£o <sec-arquitetura>
 
-#orientacao[Apresente a arquitetura com diagrama e explique cada parte.]
+A arquitetura do ModoQAP foi concebida sob o paradigma de aplicaÃ§Ã£o web distribuÃ­da, separando as camadas de apresentaÃ§Ã£o, serviÃ§os de negÃ³cio e persistÃªncia de dados. A @fig-arquitetura ilustra a organizaÃ§Ã£o geral entre a interface do usuÃ¡rio (Single Page Application), a camada de API de serviÃ§os e o banco de dados relacional.
 
-A @fig-arquitetura mostra a arquitetura do sistema. O diagrama foi desenhado em cetz, no arquivo `assets/diagramas/arquitetura.typ`, e importado neste capítulo.
+#figura(arquitetura, caption: [Arquitetura em camadas do ModoQAP]) <fig-arquitetura>
 
-#figura(arquitetura, caption: [Arquitetura do sistema]) <fig-arquitetura>
+A camada de apresentaÃ§Ã£o Ã© responsÃ¡vel pela renderizaÃ§Ã£o dinÃ¢mica dos componentes visuais, gestÃ£o de estado do temporizador local e comunicaÃ§Ã£o assÃ­ncrona com os serviÃ§os. A camada de aplicaÃ§Ã£o processa as regras de negÃ³cio de cÃ¡lculo de revisÃµes, mÃ©tricas de precisÃ£o e sequÃªncias de ciclo de estudos, persistindo eventos de estudo e telemetria analÃ­tica no repositÃ³rio de dados.
 
-#lorem(40)
+== ImplementaÃ§Ã£o dos mÃ³dulos da rotina <sec-implementacao>
 
-== Modelagem <sec-modelagem>
+A implementaÃ§Ã£o dos mÃ³dulos nucleares priorizou a facilidade de interaÃ§Ã£o durante as sessÃµes de estudo. O gerenciamento de tempo lÃ­quido utiliza temporizadores executados no cliente com sincronizaÃ§Ã£o periÃ³dica para evitar perda de dados em caso de desconexÃ£o acidental. Os eventos de resoluÃ§Ã£o de questÃµes sÃ£o registrados com carimbo de data/hora (timestamp), associados Ã  disciplina, assunto e modalidade de estudo.
 
-#orientacao[Traga a modelagem (casos de uso, classes, dados) coerente com os requisitos.]
+Para a realizaÃ§Ã£o da pesquisa empÃ­rica, foi configurado um mÃ³dulo de extraÃ§Ã£o de telemetria que permite exportar os indicadores anonimizados estabelecidos no protocolo metodolÃ³gico (dias ativos, minutos dedicados, acertos e revisÃµes cumpridas), garantindo isolamento total dos dados privados dos usuÃ¡rios.
 
-Diagramas feitos em ferramentas externas entram como imagem. A @fig-uml foi gerada pelo PlantUML a partir de `assets/diagramas/diagramauml.puml` (exporte em SVG para manter a nitidez).
+== HomologaÃ§Ã£o e congelamento de versÃ£o <sec-congelamento>
 
-#figura(
-  image("../assets/diagramas/diagramauml.svg", width: 70%),
-  caption: [Diagrama UML gerado pelo PlantUML],
-) <fig-uml>
-
-O diagrama de classes da @fig-classes é gerado diretamente do código-fonte com o pacote `sourcecraft`: se o código mudar, o diagrama acompanha.
-
-#figura(
-  source-diagram(
-    (
-      read("../assets/codigos/Estoque.java"),
-      read("../assets/codigos/Produto.java"),
-    ).join("\n\n"),
-    grammar: "java",
-    max-height: 8cm,
-  ),
-  caption: [Diagrama de classes de Produto e Estoque],
-) <fig-classes>
-
-== Implementação <sec-implementacao>
-
-#orientacao[
-  Mostre só os trechos que sustentam uma decisão técnica e comente-os. Nomes de arquivos,
-  classes e comandos no meio do texto vão como código inline, entre crases: `server.js`.
-]
-
-O @cod-servidor mostra o ponto de entrada da API, definido no arquivo `server.js`.
-
-#codigo(
-  lang: "javascript",
-  caption: [Servidor Express da API],
-  filename: "server.js",
-  read("../assets/codigos/server.js"),
-) <cod-servidor>
-
-A busca de produtos segue o @alg-busca. Algoritmos em pseudocódigo ficam em arquivos `.alg`, e as palavras-chave (_se_, _então_, _para cada_, _retorne_) saem em negrito.
-
-#algoritmo(
-  read("../assets/algoritmos/busca.alg"),
-  caption: [Busca linear],
-) <alg-busca>
-
-A @fig-tela mostra a tela inicial do sistema.
-
-// Captura de tela (PNG ou JPG): troque o arquivo de exemplo pelo print real do sistema.
-// Sem source:, a fonte sai como "Elaborado pelo próprio autor (ano)".
-#figura(
-  image("../assets/logo.png", width: 30%),
-  caption: [Tela inicial do sistema],
-) <fig-tela>
-
-As telas de login e de cadastro do aplicativo aparecem lado a lado na @fig-telas.
-
-// Duas imagens numa só figura: grid com uma coluna por imagem e a identificação (a), (b).
-#figura(
-  grid(
-    columns: 2,
-    gutter: 2em,
-    align: center,
-    stack(spacing: 0.5em, image("../assets/logo.png", width: 60%), text(size: 10pt)[(a) Login]),
-    stack(spacing: 0.5em, image("../assets/logo.png", width: 60%), text(size: 10pt)[(b) Cadastro]),
-  ) + v(0.6em),
-  caption: [Telas de login e de cadastro do aplicativo],
-) <fig-telas>
-
-== Testes <sec-testes>
-
-#orientacao[Descreva os testes realizados e o que cobrem: unidade, integração, aceitação.]
-
-#lorem(60)
+Conforme delineado na metodologia, a integridade da avaliaÃ§Ã£o exige a garantia de que a versÃ£o entregue aos participantes nÃ£o sofra alteraÃ§Ãµes conceituais durante o perÃ­odo experimental de seis semanas. Para tanto, foi gerada uma compilaÃ§Ã£o estÃ¡vel de referÃªncia (snapshot de homologaÃ§Ã£o), com parametrizaÃ§Ã£o restrita aos mÃ³dulos validados, assegurando uniformidade nas condiÃ§Ãµes de uso de toda a amostra.

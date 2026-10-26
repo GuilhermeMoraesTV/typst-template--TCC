@@ -1,66 +1,50 @@
-// capitulos/02-referencial-teorico.typ — Capítulo 2: Referencial teórico.
-// Recursos do template demonstrados aqui: todas as formas de citação da NBR 10520:2023
-// (#cite, #prose, @chave, localizador, múltiplas fontes, #apud, #citacao-curta, #citacao-longa).
-// Os trabalhos correlatos têm capítulo próprio: capitulos/03-trabalhos-correlatos.typ.
-// Pode ser aberto sozinho no preview: o #show: capitulo.with(...) aplica o estilo e a numeração.
-// Rótulos de outros capítulos aparecem como ‹rótulo› em vermelho; no main.typ, saem certos.
+﻿// capitulos/02-referencial-teorico.typ â€” CapÃ­tulo 2: Referencial teÃ³rico.
 #import "../ifbasaj-tcc/imports.typ": *
 #show: capitulo.with(numero: 2)
 
-= Referencial teórico <cap-referencial>
+= Referencial teÃ³rico <cap-referencial>
 
-#orientacao[
-  Cada seção DEVE se ligar a um objetivo específico ou a uma decisão do trabalho, com
-  fontes acadêmicas e atuais que dialoguem entre si. NÃO DEVE descrever o sistema do
-  aluno nem trazer resultados, nem ser "colcha de retalhos", um parágrafo por autor. Os títulos das seções podem ser adaptados ao tema.
-]
+== AutorregulaÃ§Ã£o da aprendizagem <sec-autorregulacao>
 
-== Conceitos da área do problema <sec-conceitos>
+#prose("zimmerman2002") define o estudante autorregulado como participante ativo do prÃ³prio processo de aprendizagem. No modelo cÃ­clico, a fase de antecipaÃ§Ã£o reÃºne anÃ¡lise da tarefa, definiÃ§Ã£o de metas e planejamento estratÃ©gico. A fase de desempenho envolve execuÃ§Ã£o, autocontrole e auto-observaÃ§Ã£o. A fase de autorreflexÃ£o inclui julgamento do resultado e reaÃ§Ãµes que influenciam o ciclo seguinte.
 
-#orientacao[Conceitos da área do problema indispensáveis para entender o restante do texto.]
+Esse modelo Ã© especialmente Ãºtil para concursos porque o estudante administra um percurso longo, com metas intermediÃ¡rias e necessidade constante de priorizaÃ§Ã£o. O planejamento nÃ£o se resume a criar uma grade. Ele precisa considerar disponibilidade, peso ou dificuldade das disciplinas, data da prova e progresso acumulado. O monitoramento, por sua vez, depende de registros que permitam reconhecer constÃ¢ncia, atrasos, precisÃ£o e necessidade de revisÃ£o.
 
-// Citação indireta parentética: autor e ano entre parênteses, ao fim da frase.
-A engenharia de software reúne práticas para produzir software de qualidade com custo previsível #cite("sommerville2011").
+A autorregulaÃ§Ã£o nÃ£o Ã© uma caracterÃ­stica fixa. Ela se manifesta em estratÃ©gias que podem ser estimuladas por orientaÃ§Ã£o, prÃ¡tica e feedback. #prose("panadero2017") observa que os modelos de autorregulaÃ§Ã£o incorporam componentes cognitivos, metacognitivos, motivacionais, comportamentais e emocionais, em consonÃ¢ncia com as premissas de monitoramento cognitivo de #prose("flavell1979"). Por isso, um sistema digital pode apoiar o processo sem substituir a tomada de decisÃ£o do estudante.
 
-// Citação indireta narrativa: o autor entra no fluxo do texto.
-Segundo #prose("wazlawick2014"), a pesquisa em computação deve deixar claro qual problema resolve e como a solução será avaliada.
+No presente estudo, autorregulaÃ§Ã£o serÃ¡ tratada como um conjunto de comportamentos e percepÃ§Ãµes. Os registros digitais poderÃ£o mostrar frequÃªncia e execuÃ§Ã£o, mas nÃ£o revelarÃ£o sozinhos a intenÃ§Ã£o do participante, a qualidade da concentraÃ§Ã£o ou a razÃ£o de uma mudanÃ§a de plano. A combinaÃ§Ã£o de dados de uso, questionÃ¡rios e entrevistas busca reduzir essa limitaÃ§Ã£o.
 
-// Com localizador (página): vale para as duas formas.
-Funções pequenas facilitam a leitura do código #cite("martin2008", supplement: [p. 34]). Na forma narrativa, #prose("martin2008", supplement: [p. 34]) defende o mesmo ponto.
+== Planejamento, monitoramento e feedback <sec-planejamento>
 
-// Atalho: @chave do .bib funciona como #cite("chave").
-Essa visão é compartilhada por outros autores @newman2021.
+Planejamento e monitoramento sÃ£o dimensÃµes conectadas. Uma meta muito ampla oferece pouca orientaÃ§Ã£o para a aÃ§Ã£o diÃ¡ria; uma meta excessivamente rÃ­gida pode se tornar inviÃ¡vel quando a rotina muda. O valor de cronogramas e ciclos depende da possibilidade de transformar objetivos em sessÃµes executÃ¡veis e de revisar o plano com base no que realmente ocorreu.
 
-// Múltiplas fontes: separadas por ponto e vírgula, na ordem alfabética.
-Há convergência na literatura sobre a importância da modularidade #cite("martin2008", "newman2021", "sommerville2011").
+O feedback pode apoiar essa revisÃ£o quando reduz a distÃ¢ncia entre a meta e o desempenho observado. #prose("nicol2006") relacionam feedback formativo e autorregulaÃ§Ã£o ao esclarecimento de padrÃµes, Ã  autoavaliaÃ§Ã£o e ao uso da informaÃ§Ã£o para modificar a aÃ§Ã£o. Em uma plataforma, isso exige mais do que exibir nÃºmeros. Os indicadores precisam ser compreensÃ­veis, estar associados a objetivos e permitir que o usuÃ¡rio reconheÃ§a uma decisÃ£o possÃ­vel.
 
-// Citação de citação (apud): só quando você NÃO teve acesso à obra original.
-// Autor e ano do original vão como texto; a chave é da obra que você leu, e só ela entra nas
-// Referências. Sempre que conseguir o original, cite-o diretamente.
-O custo de corrigir um defeito cresce à medida que o projeto avança #apud("Boehm", "1981", "sommerville2011", supplement: [p. 23]). Na forma narrativa, #apud("Boehm", "1981", "sommerville2011", narrativo: true) chega à mesma conclusão.
+PainÃ©is de aprendizagem apresentam riscos quando sÃ£o desenvolvidos sem fundamentaÃ§Ã£o ou avaliados apenas pela presenÃ§a de grÃ¡ficos. A revisÃ£o de #prose("matcha2020") identificou limitaÃ§Ãµes frequentes na relaÃ§Ã£o entre painÃ©is e metacogniÃ§Ã£o. Por essa razÃ£o, a pesquisa perguntarÃ¡ nÃ£o somente se o participante acessa o painel, mas como interpreta os indicadores e se eles influenciam decisÃµes sobre tempo, sequÃªncia, revisÃ£o ou prioridade.
 
-== Tecnologias utilizadas <sec-tecnologias>
+A avaliaÃ§Ã£o de usabilidade complementa esse exame. A System Usability Scale fornece uma medida breve da percepÃ§Ã£o geral de uso #cite("brooke1996"). A versÃ£o em portuguÃªs estudada por #prose("martins2015") oferece uma referÃªncia para aplicaÃ§Ã£o, mas o instrumento deverÃ¡ passar por revisÃ£o semÃ¢ntica e teste piloto com participantes brasileiros antes da coleta definitiva.
 
-#orientacao[
-  Explique por que cada tecnologia importa para o problema; NÃO DEVE virar tutorial nem manual de
-  instalação. NÃO DEVE usar blog ou documentação de fornecedor como única base de conceito
-  central. A justificativa da escolha fica na @sec-ferramentas (Metodologia).
-]
+== PrÃ¡tica de recuperaÃ§Ã£o e distribuiÃ§Ã£o do estudo <sec-pratica>
 
-// Citação direta curta (até 3 linhas): entre aspas, com página.
-Para #prose("newman2021", supplement: [p. 2]), microsserviços são #citacao-curta[trecho transcrito literalmente da obra, com até três linhas]. Se a obra for estrangeira e você traduzir o trecho, acrescente "tradução nossa" no localizador.
+A resoluÃ§Ã£o de questÃµes e o uso de flashcards interessam ao projeto porque aproximam o acompanhamento da prÃ¡tica ativa. #prose("roediger2006") demonstraram que testes de recuperaÃ§Ã£o podem favorecer retenÃ§Ã£o posterior em comparaÃ§Ã£o com a releitura, dependendo do intervalo considerado. #prose("cepeda2006"), ao sintetizar estudos de prÃ¡tica distribuÃ­da, mostraram que o espaÃ§amento entre sessÃµes se relaciona ao intervalo de retenÃ§Ã£o pretendido.
 
-// Citação direta longa (4 linhas ou mais): recuo de 4 cm, fonte 10, sem aspas.
-#citacao-longa(autor: "Martin", ano: "2009", pagina: "11")[
-  Texto transcrito literalmente da obra, com quatro linhas ou mais. Use este formato apenas quando
-  a formulação exata do autor for indispensável; na maior parte do referencial, prefira citações
-  indiretas, que mostram que você compreendeu e sintetizou a fonte. #lorem(20)
-]
+Essas evidÃªncias justificam o desenvolvimento de recursos de questÃµes, revisÃµes e repetiÃ§Ã£o espaÃ§ada, mas nÃ£o autorizam concluir que qualquer implementaÃ§Ã£o produzirÃ¡ o mesmo efeito. O conteÃºdo dos itens, a qualidade do feedback, o agendamento e a adesÃ£o do usuÃ¡rio continuam relevantes. Na pesquisa proposta, esses mÃ³dulos serÃ£o descritos como expansÃ£o e avaliados apenas se estiverem habilitados na versÃ£o de campo.
 
-#lorem(40)
+O caderno de erros representa outra possibilidade de autorreflexÃ£o. Ao reunir itens respondidos incorretamente e permitir acompanhar novas tentativas, ele pode tornar dificuldades recorrentes mais visÃ­veis. Seu valor, porÃ©m, deverÃ¡ ser examinado a partir da forma como o participante revisita os erros e modifica a estratÃ©gia, nÃ£o apenas da quantidade de itens armazenados.
 
-== Engenharia de software <sec-engenharia>
+== RelaÃ§Ã£o entre teoria e recursos do sistema <sec-teoria-recursos>
 
-#orientacao[Conceitos de engenharia de software que o trabalho aplica: processo, requisitos, arquitetura, testes.]
+A articulaÃ§Ã£o entre os conceitos teÃ³ricos da autorregulaÃ§Ã£o da aprendizagem e as funcionalidades disponibilizadas pelo ModoQAP Ã© sintetizada no @qua-teoria-recursos. O quadro evidencia como cada fase do modelo cÃ­clico de Zimmerman se conecta a uma necessidade do estudante, aos recursos computacionais projetados na plataforma e Ã s evidÃªncias empÃ­ricas a serem observadas durante o estudo de caso.
 
-#lorem(60)
+#quadro(
+  columns: (1fr, 1.3fr, 1.5fr, 1.5fr),
+  align: (left, left, left, left),
+  (
+    [*Fase da autorregulaÃ§Ã£o*], [*Necessidade do estudante*], [*Recursos relacionados no ModoQAP*], [*EvidÃªncia a observar*],
+    [AntecipaÃ§Ã£o], [Definir metas e organizar o edital], [Cronograma, ciclo, edital verticalizado e metas], [ExistÃªncia de plano, clareza de prioridade e viabilidade percebida],
+    [Desempenho], [Executar e manter atenÃ§Ã£o na tarefa], [Tela de estudo do dia, temporizador e registro de sessÃ£o], [Dias ativos, tempo registrado e continuidade de uso],
+    [Auto-observaÃ§Ã£o], [Acompanhar esforÃ§o e resultados], [HistÃ³rico, calendÃ¡rio, questÃµes, acertos, revisÃµes e desempenho], [FrequÃªncia, precisÃ£o, revisÃµes concluÃ­das e consulta aos indicadores],
+    [AutorreflexÃ£o], [Interpretar resultados e ajustar estratÃ©gia], [Indicadores, metas, simulados e futuras integraÃ§Ãµes com caderno de erros], [MudanÃ§as de prioridade, percepÃ§Ã£o de controle e justificativas relatadas],
+  ),
+  caption: [RelaÃ§Ã£o entre teoria de autorregulaÃ§Ã£o e recursos do ModoQAP],
+) <qua-teoria-recursos>
